@@ -1,0 +1,21 @@
+# OS files
+.DS_Store
+**/.DS_Store
+
+# Environment files
+.env
+**/.env
+
+# Node / frontend build output
+node_modules/
+**/node_modules/
+dist/
+**/dist/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editor files
+.vscode/
+.idea/
