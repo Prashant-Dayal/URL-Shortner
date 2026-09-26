@@ -16,9 +16,20 @@ dotenv.config("./.env")
 
 const app = express();
 
+const allowedOrigins = (process.env.CORS_ORIGINS || "")
+    .split(",")
+    .map((origin) => origin.trim())
+    .filter(Boolean);
+allowedOrigins.push("https://url-shortner-nine-gray.vercel.app");
+
 app.use(cors({
-    origin: /^http:\/\/localhost:\d+$/, // allow local Vite development ports
-    credentials: true // 👈 this allows cookies to be sent
+    origin: (origin, callback) => {
+        if (!origin || /^http:\/\/localhost:\d+$/.test(origin) || allowedOrigins.includes(origin)) {
+            return callback(null, true);
+        }
+        return callback(new Error("Origin is not allowed by CORS"));
+    },
+    credentials: true
 }));
 
 app.use(express.json())
@@ -35,9 +46,10 @@ app.get("/:id",redirectFromShortUrl)
 
 app.use(errorHandler)
 
-app.listen(3000,()=>{
+const port = process.env.PORT || 3000;
+app.listen(port,()=>{
     connectDB()
-    console.log("Server is running on http://localhost:3000");
+    console.log(`Server is running on port ${port}`);
 })
 
 // GET - Redirection 

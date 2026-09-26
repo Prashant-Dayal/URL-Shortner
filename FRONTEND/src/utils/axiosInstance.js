@@ -1,7 +1,13 @@
 import axios from "axios"
 
+const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || (
+    import.meta.env.DEV
+        ? "http://localhost:3000"
+        : "https://url-shortner-1-pluy.onrender.com"
+)
+
 const axiosInstance = axios.create({
-    baseURL:"http://localhost:3000",
+    baseURL: apiBaseUrl,
     timeout:10000, //10s
     withCredentials:true
 })
