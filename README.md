@@ -32,35 +32,7 @@ Convert long URLs into short, shareable links and manage them through a clean we
 
 ---
 
-## 📸 Project Preview
 
-> Add your actual application screenshots to the `screenshots/` folder and update the filenames below.
-
-### 🏠 Landing Page
-
-<p align="center">
-  <img src="./screenshots/home.png" alt="ShortLink Home Page" width="850"/>
-</p>
-
-### 🔗 URL Shortening
-
-<p align="center">
-  <img src="./screenshots/shorten-url.png" alt="URL Shortening" width="850"/>
-</p>
-
-### 📊 Dashboard / URL Management
-
-<p align="center">
-  <img src="./screenshots/dashboard.png" alt="URL Dashboard" width="850"/>
-</p>
-
-### 🔐 Authentication
-
-<p align="center">
-  <img src="./screenshots/login.png" alt="Login Page" width="850"/>
-</p>
-
----
 
 # ✨ Features
 
